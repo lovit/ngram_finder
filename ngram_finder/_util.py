@@ -1,0 +1,2 @@
+class Corpus:
+	raise NotImplemented

@@ -1,0 +1,2 @@
+class SimpleNgramFinder:
+	raise NotImplemented

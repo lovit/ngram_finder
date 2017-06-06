@@ -1,0 +1,2 @@
+class SkipNgramFinder:
+	raise NotImplemented
