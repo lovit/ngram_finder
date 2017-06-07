@@ -33,7 +33,7 @@ class DoublespaceLineCorpus:
                 if stop:
                     break
                 if not self.iter_sent:
-                    yield doc
+                    yield doc.strip()
                     if (self.num_doc > 0) and ((doc_idx + 1) >= self.num_doc):
                         stop = True
                     continue
@@ -44,7 +44,7 @@ class DoublespaceLineCorpus:
                         break
                     sent = sent.strip()
                     if not sent: continue
-                    yield sent
+                    yield sent.strip()
                     
     def __len__(self):
         if self.num_doc == 0:
