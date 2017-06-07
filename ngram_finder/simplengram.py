@@ -20,7 +20,7 @@ class SimpleNgramFinder:
         
         for i, sent in enumerate(sentence_iterable_corpus):
             words = self.tokenize(sent)
-            ngrams = [tuple(words[b:b+w]) for w in range(1, 4+1) for b in range(0, len(words) - w + 1)]
+            ngrams = [tuple(words[b:b+w]) for w in range(1, self.n+1) for b in range(0, len(words) - w + 1)]
             for ngram in ngrams:
                 self._c[ngram] = self._c.get(ngram, 0) + 1
             if (i > 0) and (self.num_sents_for_pruning > 0) and (i % self.num_sents_for_pruning == 0):

@@ -53,7 +53,7 @@ class SkipNgramFinder:
         for w in range(2, min(self.max_window, length)+1):
             for b in range(length-w+1):
                 in_window = words_idx[b:b+w]
-                for n in range(max(2, w-self.max_num_skip), min(w, 4)+1):
+                for n in range(max(2, w-self.max_num_skip), min(w, self.n)+1):
                     idxs.update(set(combinations(in_window, n)))
         self._templateset[length] = sorted(idxs)
         return idxs
