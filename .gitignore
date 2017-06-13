@@ -10,3 +10,7 @@ tmp/
 
 # Jupyter notebook
 .ipynb_checkpoints/
+
+# Tutorials
+tutorials/config.py
+tutorials/param*
