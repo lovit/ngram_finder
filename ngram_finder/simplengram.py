@@ -1,3 +1,5 @@
+from ngram_finder.utils import get_process_memory
+
 class SimpleNgramFinder:
     def __init__(self, n=4, min_count=10, tokenize=lambda x:x.split(), num_sents_for_pruning=10000, prune_min_count=2, verbose=True):
         assert type(n) == int
@@ -26,10 +28,10 @@ class SimpleNgramFinder:
             if (i > 0) and (self.num_sents_for_pruning > 0) and (i % self.num_sents_for_pruning == 0):
                 self._c = {ngram:freq for ngram, freq in self._c.items() if freq >= self.prune_min_count}
             if self.verbose and i % 1000 == 0:
-                args = (len(self._c), i+1, len(sentence_iterable_corpus))
-                sys.stdout.write('scanning simple ngram ... # candidates= %d, (%d in %d)' % args)
+                args = (len(self._c), i+1, len(sentence_iterable_corpus), get_process_memory())
+                sys.stdout.write('\rscanning simple ngram ... # candidates= %d, (%d in %d) memory= %.3f Gb' % args)
         if self.verbose:
-            print('\rscanning simple ngram was done')
+            print('\rscanning simple ngram was done. memory= %.3f Gb' % get_process_memory())
         
         ngrams = {ngram:freq for ngram, freq in self._c.items() if freq >= self.min_count}
         return ngrams
