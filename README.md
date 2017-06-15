@@ -18,4 +18,18 @@ It extracts ngrams skipping infrequent middle words. Configuration parameters ar
 
 ### Cohesion score
 
-Geometric average of conditional probability. cohesion('a-b-c') = {P('a-b'|'a') * P('a-b-c'|'a-b')}^(1/2)
+Geometric average of conditional probability. cohesion(abc) = {P(ab|a) * P(abc|ab)}^(1/2)
+
+	eg) '무단 - 배포 - 금지'
+
+### Branching entropy
+
+entropy of left/right-side expansion tokens
+
+	eg) '에 - 대한' in [사건, 에, 대한, 의견] ...
+
+### Mutual information
+
+( count(wi, wj) - delta ) / ( count(wi) * count(wj) ) in Word2Vec paper
+
+Three options for n >= 3 case; max, average, top3_average
