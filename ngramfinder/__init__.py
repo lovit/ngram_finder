@@ -6,3 +6,5 @@ from .utils import DoublespaceLineCorpus
 from .skipngram import SkipNgramFinder
 from .simplengram import SimpleNgramFinder
 from .score import cohesion_score
+from .score import branching_entropy
+from .score import mutual_information
