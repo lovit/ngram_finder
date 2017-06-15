@@ -1,4 +1,4 @@
-__name__ = 'ngram_finder'
+__name__ = 'ngramfinder'
 __version__ = '0.0.1'
 __author__ = 'Lovit'
 
