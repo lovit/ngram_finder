@@ -1,4 +1,4 @@
-from ngram_finder.utils import get_process_memory
+from ngramfinder.utils import get_process_memory
 
 class SimpleNgramFinder:
     def __init__(self, n=4, min_count=10, tokenize=lambda x:x.split(), num_sents_for_pruning=10000, prune_min_count=2, verbose=True):
