@@ -20,13 +20,13 @@ It extracts ngrams skipping infrequent middle words. Configuration parameters ar
 
 Geometric average of conditional probability. cohesion(abc) = {P(ab|a) * P(abc|ab)}^(1/2)
 
-	eg) '무단 - 배포 - 금지'
+    eg) '무단 - 배포 - 금지'
 
 ### Branching entropy
 
 entropy of left/right-side expansion tokens
 
-	eg) '에 - 대한' in [사건, 에, 대한, 의견] ...
+    eg) '에 - 대한' in [사건, 에, 대한, 의견] ...
 
 ### Mutual information
 
